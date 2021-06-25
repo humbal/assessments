@@ -1,0 +1,7 @@
+field.formatter.settings.slugify:
+  type: mapping
+  label: 'Converts text into a slug formatter settings'
+  mapping:
+    separator:
+      type: string
+      label: 'Text Separator'

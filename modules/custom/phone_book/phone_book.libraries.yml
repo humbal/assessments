@@ -1,0 +1,15 @@
+global_styles:
+
+  js:
+    assets/js/pagination.js: {}
+  css:
+    theme:
+      assets/css/style.css: {}
+      https://use.fontawesome.com/releases/v5.5.0/css/all.css: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

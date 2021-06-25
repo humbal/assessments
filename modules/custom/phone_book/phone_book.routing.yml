@@ -1,0 +1,23 @@
+phone_book.managePhoneBook:
+  path: 'phone-book'
+  defaults:
+    _title: 'My UT Phone book'
+    _controller: '\Drupal\phone_book\Controller\DefaultController::managePhoneBook'
+  requirements:
+    _permission: 'access content'
+
+phone_book.delete_phone_number_ajax:
+  path: '/del/phone_book/item/delete/{id}'
+  defaults:
+    _controller: '\Drupal\phone_book\Controller\DefaultController::deletePhoneNumberAjax'
+    _title: 'Delete Phone Number'
+  requirements:
+    _permission: 'access content'
+
+phone_book.edit_phone_number_ajax:
+  path: '/ajax/phone_book/item/edit/{id}'
+  defaults:
+    _controller: '\Drupal\phone_book\Controller\DefaultController::editPhoneNumberAjax'
+    _title: 'Edit Phone Number'
+  requirements:
+    _permission: 'access content'

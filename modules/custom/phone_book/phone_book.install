@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * This is the module to create a phone book.
+ */
+
+/**
+ * Implement hoo_schema().
+ */
+function phone_book_schema() {
+  $schema['phone_book'] = [
+    'fields' => [
+      'id'=> [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'phone_number' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'is_fav' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}

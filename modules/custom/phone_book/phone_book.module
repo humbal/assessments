@@ -1,0 +1,52 @@
+<?php
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+/**
+ * Implements hook_theme()
+ */
+function phone_book_theme($existing, $type, $theme, $path)
+{
+    return [
+        'phone_book_index_page' => [
+            'template' => 'phone-book-index',
+            'path' => $path. '/templates',
+            'render element' => 'form',
+        ],
+    ];
+}
+
+/**
+ * {@inheritdoc}
+ * Get Pager
+ */
+function getPager()
+{
+
+    $query = \Drupal::database()->select('phone_book', 't');
+    $query->addExpression('COUNT(*)');
+    $count = $query->execute()->fetchField();
+
+
+    $count = ceil($count/15);
+
+    $page_link = Url::fromUserInput('/ajax/phone_book/table/page/0');
+    $page_link = Link::fromTextAndUrl('<<', $page_link);
+    $page_link = $page_link->toRenderable();
+    $page_link['#attributes'] = ['class'=>['use-ajax']];
+    $out = render($page_link);
+    for($i = 0; $i < $count; $i++){
+        $page = Url::fromUserInput('/ajax/phone_book/table/page/'.$i);
+        $pageLink =  Link::fromTextAndUrl($i, $page);
+        $pageLink = $pageLink->toRenderable();
+        $pageLink['#attributes'] = ['class'=>['use-ajax','pagination-link']];
+        $out = $out.render($pageLink);
+    }
+    $last_page = $count-1;
+    $page_link_last = Url::fromUserInput('/ajax/phone_book/table/page/'.$last_page);
+    $page_link_last = Link::fromTextAndUrl('>>', $page_link_last);
+    $page_link_last = $page_link_last->toRenderable();
+    $page_link_last['#attributes'] = ['class'=>['use-ajax']];
+    $out = $out.render($page_link_last);
+    return $out;
+
+}

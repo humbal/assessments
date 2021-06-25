@@ -1,0 +1,3 @@
+services:
+  custom_field_formatter.slug:
+    class: Drupal\custom_field_formatter\ConvertToSlug

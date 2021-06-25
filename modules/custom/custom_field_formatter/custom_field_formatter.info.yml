@@ -1,0 +1,10 @@
+name: Custom Field Formatter
+description: Custom text field formatter that allows three type of formatting for a text field.
+type: module
+package: Custom
+core_version_requirement: ^8 || ^9
+dependencies:
+  - field
+
+version: '1.0'
+

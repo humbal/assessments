@@ -1,0 +1,14 @@
+text.tooltip:
+  version: 1.x
+  js:
+    libraries/qTip2/dist/jquery.qtip.min.js: {}
+    js/tooltip.js: {}
+  css:
+    component:
+      libraries/qtip2/dist/jquery.qtip.min.css: {}
+    theme:
+      css/tooltip.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

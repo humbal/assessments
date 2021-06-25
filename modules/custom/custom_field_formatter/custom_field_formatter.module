@@ -1,0 +1,37 @@
+<?php
+
+/***
+ * Convert text to ROT13.
+ */
+function formatTextToRot13($string = NULL) {
+  $string = str_split($string);
+  foreach($string as $key => $char) {
+    $character = ord($char);
+
+    if (($character >= ord('a') && $character <= ord('m')) || ($character >= ord('A') && $character <= ord('M'))) {
+      $character += 13;
+    } elseif (($character >= ord('n') && $character <= ord('z')) || ($character >= ord('N') && $character <= ord('Z'))) {
+      $character -= 13;
+    }
+
+    $string[$key] = chr($character);
+  }
+
+  return implode($string);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_field_formatter_theme($existing, $type, $theme, $path) {
+  return [
+    'field_text_tooltip' => [
+      'variables' => [
+        'text' => NULL,
+        'tooltip' => NULL,
+        'class' => 'text_field_tooltip'
+        ],
+      'template' => 'custom-field-tooltip',
+    ],
+  ];
+}

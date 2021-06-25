@@ -1,0 +1,6 @@
+name: Custom Phonebook
+description: A simple phone book application
+type: module
+package: Custom
+core_version_requirement: ^8 || ^9
+version: '1.0'
