@@ -1,3 +1,4 @@
 # assessments
-Contains Drupal custom modules to display phone book list.
-Supported version: 8/9
+1. Drupal
+2. Angular
+
