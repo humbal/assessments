@@ -15,7 +15,7 @@ export class HomeComponent {
     name: 'Test Home',
     city: 'Edison',
     state: 'NJ',
-    photo: 'assests/example-house.jpg',
+    photo: 'assets/example-house.jpg',
     availableUnits: 99,
     wifi: true,
     laundry: false,
