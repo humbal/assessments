@@ -52,3 +52,11 @@ _Dependency injection_ is the mechanism that manages the dependencies of an app'
 **To create a service:**
 
 `ng generate service housing`
+
+## Routing
+Routing is the ability to navigate from one component in the application to another. In SPA, only parts of the page is updated to represent the requested view for the user.
+
+The Angular Router enables users to declare routes and specify which component should be displayed on the screen if that route is requested by the application.
+
+**To create a route** 
+`ng generate component details [--standalone] [--inline-template] [--skip-tests]`
